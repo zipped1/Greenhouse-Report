@@ -2,7 +2,7 @@
 
 ## Installation
 
-## Linux 
+### Linux 
 
 Clone the repository and install latex packages:
 
@@ -13,7 +13,7 @@ chmod +x compile.sh
 sudo chown -R <your-user> .
 ```
 
-## Windows
+### Windows
 
 On windows you should be able to just use your favourite Latex environment.
 
@@ -30,3 +30,18 @@ You must rename all `authors.tex.default` to `authors.tex` and define the author
 or just compile `main.tex` in your IDE on Windows.
 
 This will generate the final document `main.pdf`.
+
+## Include Graphics and Code
+
+### Images / Graphics
+
+Since at the top of every member directory `\graphicspath{{members/<name>/figures/}}` is set,
+you can just put your graphics in each folder's `figures` folder and include them via `\includegraphics{filename.ext}`.
+
+### Code
+
+Including code requires the define the whole path, i.e.:
+
+```latex
+\lstinputlisting[language=Python, linerange={12-14}, frame=single, caption = Given a folder \textit{directory\_im} containing obj files a specific number of plants are randomly selected ]{members/cm/import_plants.py}\vspace{5pt}
+```
