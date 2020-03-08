@@ -1,14 +1,17 @@
+\graphicspath{{members/cm/figures/}}
+
 \subsection{Building the foundation of the tomato plants}
-\sectionauthor{Carla Mölbert}
+\input{members/cm/authors}
 
 The goal of the simulation is to create a variety of different realistic tomato plants. The first step is therefore to determine which parameters describe a realistic tomato plant. A tomato plant can be split in four major parts; stem, leaves, flowers, fruits. Each of which, have their own properties, which can vary from plant to plant in a certain range. For example, if a tomato plant carries ripe fruits these are red, round and have a certain size. But how ripe the fruits are and the health status of the plant, can lead to variations in size and color of the fruits. And the amount and position of the fruits are variable, as well. 
 
-In order to create this variability PlantStudio is used. PlantStudio is a parameter-driven simulation tool, which can be used for the simulation of various non-woody plants throughout their life cycle. It provides various parameters concerning the structure and the growth of the plant.  It starts with a collection of questions regarding the optics of the plant, containing information about the stem, leaves, flowers and fruits. This enables an individual adjustment of color, shape, amount and distribution for each of these plant parts. A detailed descriptions of the settings used in this project can be found in table \ref{tab:parameters_plantStudio}. Thanks to the randomize function provided by PlantStudio a multitude of different plants with these parameters can be created.\\
+In order to create this variability PlantStudio is used.
+PlantStudio is a parameter-driven simulation tool, which can be used for the simulation of various non-woody plants throughout their life cycle.
+It provides various parameters concerning the structure and the growth of the plant.
+It starts with a collection of questions regarding the optics of the plant, containing information about the stem, leaves, flowers and fruits.
+This enables an individual adjustment of color, shape, amount and distribution for each of these plant parts. A detailed descriptions of the settings used in this project can be found in table \ref{tab:parameters_plantStudio}. Thanks to the randomize function provided by PlantStudio a multitude of different plants with these parameters can be created.\\
 
 For each created plant PlantStudio animates a life cycle going from the spearing of the plant to the full-grown tomato plant with ripe fruits. The duration of the life cycle and at which point the fruits start to grow, can be manually adjusted to create a realistic representation. \\
-
-
-
 
 \begin{longtable}[c]{@{}p{0.15\textwidth}p{0.45\textwidth}p{0.4\textwidth}@{}}
 	\caption{General parameters set in PlantStudio describing the growth behavior of tomato plants.}
@@ -77,26 +80,26 @@ For each created plant PlantStudio animates a life cycle going from the spearing
 \end{longtable}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}{.24\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{carla/figures/plantAging001.jpg}
+		\includegraphics[width=\linewidth]{plantAging001.jpg}
 		\label{fig:sub1}
 	\end{subfigure}
 	\begin{subfigure}{.24\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{carla/figures/plantAging002.jpg}
+		\includegraphics[width=\linewidth]{plantAging002.jpg}
 		\label{fig:sub2}
 	\end{subfigure}%
 	\begin{subfigure}{.24\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{carla/figures/plantAging003.jpg}
+		\includegraphics[width=\linewidth]{plantAging003.jpg}
 		\label{fig:sub3}
 	\end{subfigure}%
 	\begin{subfigure}{.24\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{carla/figures/plantAging004.jpg}
+		\includegraphics[width=\linewidth]{plantAging004.jpg}
 		\label{fig:sub4}
 	\end{subfigure}%
 	\caption{Example of a tomato plant created with PlantStudios in four different stages of growth}
@@ -110,11 +113,11 @@ The created plants have the general parameters of tomato plant but do not look r
 
 
 \subsection{Importing and placing plants in Blender}
-\sectionauthor{Carla Mölbert}
+\input{members/cm/authors}
 \begin{wrapfigure}{r}{0.5\textwidth} 
 	\vspace{-25pt}
 	\begin{center}
-		\includegraphics[width=0.45\textwidth]{carla/figures/BlenderImport.JPG}
+		\includegraphics[width=0.45\textwidth]{BlenderImport.JPG}
 		\caption{Import of 42 randomly selected plants into Blender with 6 plants per row and soil and pole for each plant.}
 		\label{fig:BlenderImport}
 	\end{center}
@@ -124,14 +127,14 @@ The created plants have the general parameters of tomato plant but do not look r
 
 The tomato plant can be imported into Blender. Blender is an open source computer graphics software, which can be used for visual effects, 3D models, etc. The purpose of using Blender is to import the in PlantStudio created plants and  add details, shading, rendering and lighting. The script written to import the plants can be easily adjusted in the number of plants that should be planted and the number of plants that are planted in each row. Which plants are planted is randomly selected from the 42 plants exported from PlantStudio.
 
-\lstinputlisting[language=Python, linerange={12-14}, frame=single, caption = Given a folder \textit{directory\_im} containing obj files a specific number of plants are randomly selected ]{carla/import_plants.py}\vspace{5pt}
+\lstinputlisting[language=Python, linerange={12-14}, frame=single, caption = Given a folder \textit{directory\_im} containing obj files a specific number of plants are randomly selected ]{members/cm/import_plants.py}\vspace{5pt}
 
 
 The plants are than imported and placed in multiple rows of a specific length, that can be set by the user. Here, it is important to select to split the geometry by group, in order to individually adjust each leaf or fruit section. In order to be able to differentiate between the various plants, each plant is placed in its own collection. 
 
-\lstinputlisting[language=Python, linerange={21-39}, frame=single, caption = Inorder to place the plants like they would be placed in the greenhouse we need to know how many plants should be planted and how many fit in one row.]{carla/import_plants.py}\vspace{5pt}
+\lstinputlisting[language=Python, linerange={21-39}, frame=single, caption = Inorder to place the plants like they would be placed in the greenhouse we need to know how many plants should be planted and how many fit in one row.]{members/cm/import_plants.py}\vspace{5pt}
 
 Each plant is positioned next to a pole to fix it and on a square of soil. In this step we add these features without any texture and material. These will be added at a later point to further increase the closeness to reality. 
 
-\lstinputlisting[language=Python, linerange={43-49}, frame=single, caption = Placement of the pole next to each plant. Placement of soil is don analog]{carla/import_plants.py}\vspace{5pt}
+\lstinputlisting[language=Python, linerange={43-49}, frame=single, caption = Placement of the pole next to each plant. Placement of soil is don analog]{members/cm/import_plants.py}\vspace{5pt}
 

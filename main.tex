@@ -1,21 +1,24 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
 
-
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{wrapfig}
-
 \usepackage{booktabs}
 \usepackage{longtable}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
 \usepackage{listings}
-
 \usepackage{suffix}
-
 \newcommand\sectionauthor[1]{\authortoc{#1}}
 
+\usepackage[
+	backend=biber,
+	style=alphabetic,
+	citestyle=numeric
+]{biblatex}
+\addbibresource{main.bib}
 
 \makeatletter
 \newcommand{\authortoc}[1]{%
@@ -25,45 +28,51 @@
     {\hskip2.3em\mdseries\scshape\protect\scriptsize#1}{}{}}
   \addtocontents{toc}{\vskip5pt}%
 }
-\makeatother
 
-\usepackage{geometry}
-\geometry{
-	left=2.5cm,
-	right=2.5cm,
-	top=3cm,
-	bottom=3cm,
-	bindingoffset=0mm
-}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bindingoffset=0mm]{geometry}
 
 \begin{document}
+
 \setlength\parindent{0pt}
 \begin{titlepage}
 	\centering
 	\vspace{5cm}
 	{\scshape\LARGE Greenhouse yield prediction \par}
-	\vspace{2cm}
-	{\Large\itshape Niousha Hashemi, Kilian Hunold, Carla Mölbert\par}
+	\vspace{0.5cm}
 	{\scshape Systems Engineering Meets Life Sciences \par}
 	{\scshape Project report\par}
-	
+	\vspace{2cm}
+	{\large Authors\par}
+	\vspace{0.5cm}
+	\input{authors}
+
 	\vfill
 	Advisor:\par
-	Prof. Dr. Visvanathan  \textsc{Ramesh} 
-	
+	Prof. Dr. Visvanathan  \textsc{Ramesh}
+
 	\vfill
-	
+
 	% Bottom of the page
 	{\large Prepared at Goethe University Frankfurt am Main \\ \today\par}
 \end{titlepage}
 
-\tableofcontents \newpage 
+\tableofcontents
+\newpage
+\input{sections/user-view}
+\input{members/ssr/user-view}
 
+\input{sections/modeller}
+\input{members/ssr/modelling}
+\input{members/tf/modelling}
+\input{members/paz/modelling}
+\newpage
 
+\input{sections/simulation}
+\input{members/kh/simulation}
+\input{members/cm/simulation}
+\input{members/nh/simulation}
 
-\input{carla/simulation}
-\input{carla/simulation_carla}
-%\input{simulation_kilian}
-%\input{simulation_niousha}
+\newpage
+\printbibliography
 
-\end{document} 
+\end{document}
