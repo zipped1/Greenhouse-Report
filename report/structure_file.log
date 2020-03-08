@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  8 MAR 2020 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  8 MAR 2020 15:30
 entering extended mode
 **./structure_file.tex
 (structure_file.tex
@@ -382,7 +382,7 @@ ntAging004.jpg> <./carla/figures/BlenderImport.JPG>]
 (carla/import_plants.py) (carla/import_plants.py)) [5] (structure_file.aux) ) 
 Here is how much of TeX's memory you used:
  4855 strings out of 492483
- 72873 string characters out of 3121588
+ 72587 string characters out of 3121588
  340617 words of memory out of 3000000
  9154 multiletter control sequences out of 15000+200000
  9491 words of font info for 33 fonts, out of 3000000 for 9000
