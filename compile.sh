@@ -1,5 +1,4 @@
 #!/bin/bash
-setopt nullglob
 #rm *.bbl *.blg *.bcf *.fls *.pdf *.toc *.aux *.out *.log
 #find . -name "*.aux" -type f -delete
 pdflatex main.tex
