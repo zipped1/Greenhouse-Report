@@ -4,7 +4,7 @@
 
 ## Installation
 
-### Linux 
+### Linux
 
 Clone the repository and install latex packages:
 
@@ -19,9 +19,21 @@ sudo chown -R <your-user> .
 
 On windows you should be able to just use your favourite Latex environment.
 
-## Configuration
+## Setup
 
 You must rename all `authors.tex.default` to `authors.tex` and define the author name in the file (or leave the default).
+
+To get quickly running just rename the default files:
+
+```bash
+cp authors.tex.default authors.tex
+cp members/cm/authors.tex.default members/cm/authors.tex
+cp members/kh/authors.tex.default members/kh/authors.tex
+cp members/nh/authors.tex.default members/nh/authors.tex
+cp members/paz/authors.tex.default members/paz/authors.tex
+cp members/ssr/authors.tex.default members/ssr/authors.tex
+cp members/tf/authors.tex.default members/tf/authors.tex
+```
 
 ## Build the document
 
