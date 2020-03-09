@@ -1,5 +1,7 @@
 # Greenhouse Report
 
+[![Build Status](http://sedrad.com:8080/buildStatus/icon?job=Greenhouse-Report)](http://sedrad.com:8080/job/Greenhouse-Report/)
+
 ## Installation
 
 ### Linux 
