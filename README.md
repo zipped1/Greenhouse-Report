@@ -2,40 +2,37 @@
 
 [![Build Status](http://sedrad.com:8080/buildStatus/icon?job=Greenhouse-Report)](http://sedrad.com:8080/job/Greenhouse-Report/)
 
-## Compiling the document
+## Setup
 
-First install the required latex packages:
-
-```bash
-sudo apt install texlive-base texlive-bibtex-extra texlive-latex-extra -y
-```
 Then clone the repository:
 
 ```bash
 git clone https://github.com/srad/Greenhouse-Report.git
 cd Greenhouse-Report
 ```
+
+Install the needed packages:
+
+```bash
+make install
+```
+
 The authors are not checked in for privacy reasons, but are stored in `authors.tex` locally.
 
-You must rename all `authors.tex.default` to `authors.tex` and define the author name in the file (or leave the default).
+All `authors.tex.default` must be renamed to `authors.tex` and define the author names (or leave the default).
 
 To get quickly running just rename the default files:
 
 ```bash
-cp authors.tex.default authors.tex
-cp members/cm/authors.tex.default members/cm/authors.tex
-cp members/kh/authors.tex.default members/kh/authors.tex
-cp members/nh/authors.tex.default members/nh/authors.tex
-cp members/paz/authors.tex.default members/paz/authors.tex
-cp members/ssr/authors.tex.default members/ssr/authors.tex
-cp members/tf/authors.tex.default members/tf/authors.tex
+make setup
 ```
 
-Then compile the document:
+## Build the document
+
+Compile the document just run:
 
 ```bash
-chmod +x compile.sh
-./compile.sh
+make
 ```
 
 On windows you should be able to just use your favourite Latex environment, just compile `main.tex` in your IDE on Windows.
