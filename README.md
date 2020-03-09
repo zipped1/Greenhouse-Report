@@ -4,22 +4,21 @@
 
 ## Installation
 
-### Linux
+### Setup (under Ubuntu Linux)
 
-Clone the repository and install latex packages:
+First install the required latex packages:
 
 ```bash
-https://github.com/srad/Greenhouse-Report.git
-sudo apt install texlive-full
-chmod +x compile.sh
-sudo chown -R <your-user> .
+sudo apt install texlive-base texlive-bibtex-extra texlive-latex-extra -y
 ```
+Then clone the repository:
 
-### Windows
-
-On windows you should be able to just use your favourite Latex environment.
-
-## Setup
+```bash
+git clone https://github.com/srad/Greenhouse-Report.git
+cd Greenhouse-Report
+chmod +x compile.sh
+```
+The authors are not checked in for privacy reasons, but are stored in authors.tex locally.
 
 You must rename all `authors.tex.default` to `authors.tex` and define the author name in the file (or leave the default).
 
@@ -35,7 +34,11 @@ cp members/ssr/authors.tex.default members/ssr/authors.tex
 cp members/tf/authors.tex.default members/tf/authors.tex
 ```
 
-## Build the document
+### Windows
+
+On windows you should be able to just use your favourite Latex environment.
+
+## Build the document on Linux
 
 ```bash
 ./compile.sh
