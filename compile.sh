@@ -4,5 +4,5 @@
 pdflatex main.tex
 biber main
 pdflatex main.tex
-rm *.bbl *.blg *.bcf *.toc *.aux *.log
+#rm *.bbl *.blg *.bcf *.toc *.aux *.log
 exit 0
