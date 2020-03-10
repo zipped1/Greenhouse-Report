@@ -4,7 +4,7 @@
 
 ## Setup
 
-Then clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/srad/Greenhouse-Report.git
