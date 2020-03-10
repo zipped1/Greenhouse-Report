@@ -2,6 +2,8 @@ build: clean
 	pdflatex main.tex
 	biber main
 	pdflatex main.tex
+	
+view: build
 	xdg-open main.pdf
 
 install:
