@@ -1,4 +1,4 @@
-build:
+build: clean
 	pdflatex main.tex
 	biber main
 	pdflatex main.tex
@@ -18,4 +18,4 @@ setup:
 
 clean:
 	find . -name "*.aux" -type f -delete
-	rm *.bbl *.blg *.bcf *.toc *.aux *.log
+	rm *.bbl *.blg *.bcf *.toc *.aux *.log main.pdf -f
