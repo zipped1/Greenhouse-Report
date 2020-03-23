@@ -27,7 +27,6 @@
 ]{biblatex}
 \addbibresource{main.bib}
 
-\makeatletter
 \newcommand{\authortoc}[1]{%
   \addtocontents{toc}{\vskip-5pt}%
   \addtocontents{toc}{%
@@ -37,9 +36,10 @@
 }
 
 \usepackage[left=2.5cm,right=2.5cm,top=3cm,bindingoffset=0mm]{geometry}
+\usepackage{csquotes}
 
 \begin{document}
-
+	\pagenumbering{gobble}
 \setlength\parindent{0pt}
 \begin{titlepage}
 	\centering
@@ -65,6 +65,7 @@
 
 \tableofcontents
 \newpage
+\pagenumbering{arabic}
 \input{sections/user-view}
 \input{members/ssr/user-view}
 
