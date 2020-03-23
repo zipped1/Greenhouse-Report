@@ -50,7 +50,7 @@ The camera  is set as seen in \ref{fig:setupSide}. The camera is set at a certai
 Furthermore every plant has a pole that is placed behind the plant from the cameras perspective, this helps the plant grow straight one one hand but is also usefull for the procedure described below. it is important that the pole is large enough to exit the top of the camera frame and is as straight as possible.
 \subsubsection{Estimating top of plant}
 To estimate the top of the plant the pole must be found first. that is done using edge detection.
-\subsubsubsection{Edge detection}
+\subsubsection{Edge detection}
 to detect the edges a simple kernel was applied to the whole picture.\\
 TODO:\\
 -create pictures with Edges (display kernel)\\
@@ -85,6 +85,7 @@ $$h_{plant} = h_{camera} - d\cdot tan(\alpha - \beta)$$
 \textbf{Model:} The plant is modeled as a cylinder in this step. Hence it is assumed that the first point of the pole that is covered is actually the top. That this idea works quite well is shown in \textcolor{red}{ABSCHNITT IMPLEMENTATION. (STIMMT DAS ?)}
 \subsection{Estimating LAI}
 \label{section:EstLAI}
+
 Beachte Überdeckungen innerhalb einer Ebene
 \subsection{Yield prediction}
-\input{lorem}
+%\input{lorem}
