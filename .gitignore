@@ -284,3 +284,5 @@ TSWLatexianTemp*
 
 *_latexmk
 **/authors.tex
+*.txss
+*.sh
