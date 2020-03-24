@@ -81,7 +81,8 @@ $$\beta = \frac{\Delta y}{(\frac{y_{range}}{2})}\gamma$$
 \textbf{Note:} This works well as long as the picture is not distorted by the lens. Thus its suggested not to use a wide angle lens, since those distort the image unlike regular lenses.\\
 Once we know $\beta$ we can calculate the height of the plant :
 $$h_{plant} = h_{camera} - d\cdot tan(\alpha - \beta)$$
-\textbf{Model:} The plant is modeled as a cylinder in this step. Hence it is assumed that the first point of the pole that is covered is actually the top. That this idea works quite well is shown in \textcolor{red}{ABSCHNITT IMPLEMENTATION. (STIMMT DAS ?)}
+\textbf{Model:} The model is of the cylinder with levels has a flat area on top (the top level). Hence it is assumed that the first point of the pole that is covered is actually the top. That this idea works quite well is shown in \textcolor{red}{ABSCHNITT IMPLEMENTATION. (STIMMT DAS ?)}
+\textbf{Invariances:} a slightly tilted ploe doesn'nt affect this method since the top area of the plant is assumed to be a plane. A strong tilt decreases the precision of the method even if the pole is correctly found, since the pole might enter the plant more from the side at a lower level below the top.
 \subsection{Estimating LAI}
 \input{members/tf/authors}
 \label{section:EstLAI}
@@ -109,4 +110,15 @@ The distance of branch repetition $\Delta d$ needs to be trained once the model 
 \subsection{Yield prediction}
 \input{members/tf/authors}
 \label{section:yieldPrediction}
-Linear model ftw.
+The LAI index has a huge impact on future yield \textcolor{red}{QUELLE?}. The dependecy is assumed to be a non-linear, meaning there is a nonlinear function $F$ s.t. $$yield = F(LAI)$$. To find that non-linearity, data needs to be gathered first. For complex models more data is needed than for simple models. Thus for the first iteration the dependency is assumed to be linear. The yield will then be predicted by
+$$yield = m\cdot LAI + b$$
+Once much data is gathered and it turned out that a linear model doesn't make good predicitions, it is possible to use more complex models for later iterations.\\
+\textbf{Reasonable non-linear approaches:}
+\begin{itemize}
+   \item Function of higher degree
+   \item exponential function
+   \item logarithmic function
+   \item sigmoid function
+   \item neural network
+   \item other Machiene Learning methods
+\end{itemize}
