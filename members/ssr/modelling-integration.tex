@@ -34,15 +34,17 @@ data preparation, like segmentation and for this purpose they served well.\\
 
 Following metrics has been selected for the simulation and can be provided with data (or need yet real-world probability distributions):\\
 
-\begin{center}
+\begin{table}
+    \centering
     \begin{tabular}{ |l|l| }
         \hline
-        $\theta_{col,leaf}$ & Material color distributions \\
-        $\theta_{col,earth}$ & Earth color distributions  \\
-        $\theta_{tilt}$ & Leaf tilt distribution  \\
-        $\theta_{height}$ & Plant height  \\
-        $\theta_{d,level}$ & Level distances  \\
-        $h_{leaf}(level)$ & Leaf count distribution per level (or per-level leaf density) \\
+        $\theta_{col,leaf}$ & Leaf area color distribution (rough approximation, not exact yet) \\
+        $\theta_{col,earth}$ & Non-leaf area color distribution (rough approximation, not exact yet)  \\
+        $\theta_{tilt}$ & Leaf tilting \\
+        $h$ & Plant model height  \\
+        $\Delta d$ & Plant model level distance \\
+        %$h_{leaf}(level)$ & Leaf count distribution per level (or per-level leaf density) \\
         \hline
     \end{tabular}
-\end{center}
+    \caption{Simulation parameters}
+\end{table}

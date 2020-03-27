@@ -130,10 +130,13 @@ After the height of the plant and the canopy area are estimated, they can be use
    \end{figure}
 
 To calculate the LAI, the entire leaf area per ground unit must be calculated.
-Since the ground area is the same for every plant and will be multiplied with
-a trained factor in section \ref{section:yieldPrediction}, calculating the total
-green area is quite enough. As already described earlier the plant is modeled as
-a cone with multiple leave levels (see figure \ref{fig:branchRepetition}).
+Since the ground area is the same for every plant this would be a linear transform
+of the leaf area. This transform would be the same for every plant, thus won't add
+information to the value. In section \ref{section:yieldPrediction} the LAI will be
+used as an input for a yield estimator. This estimator will be some kind of learning
+algorithm using the LAI as source of information. Which means the ground are doesn't
+need to be divided. As already described earlier the plant is modeled as a cone with
+multiple leave levels (see figure \ref{fig:branchRepetition}).
 
 \begin{figure}[H]
    \centering
@@ -149,13 +152,25 @@ $$r = \sqrt{\frac{A}{\pi}}$$
 The radii of the upper levels are linearly decreasing. The area on top of the cone would have an area of zero, which makes sense since the original plant doesn't even reach that high (the cone is one level higher than the original plant).\\ Hence:
 $$A_{Total} = \sum_{i=1}^{N_{Levels}}(\frac{i}{N_{Levels}}r)^2\pi$$
 The distance of branch repetition $\Delta d$ needs to be trained once the model is in use.
+
 \subsection{Yield prediction}
-\input{members/tf/authors}
+\input{members/tf/authors}\input{members/paz/authors}
 \label{section:yieldPrediction}
-The LAI index has a huge impact on future yield \textcolor{red}{QUELLE?}. The dependecy is assumed to be a non-linear, meaning there is a nonlinear function $F$ s.t. $$yield = F(LAI)$$. To find that non-linearity, data needs to be gathered first. For complex models more data is needed than for simple models. Thus for the first iteration the dependency is assumed to be linear. The yield will then be predicted by
+
+One of the most important factors for yield over all sorts of crops is described by the photosynthetically active radiation,
+short the PAR. The dry matter production correlates to the amount of radiation a plant is able to absorb. \cite{heuvelink1996tomato}.
+In our previous design sectionw e motivated the use of the Leaf Area Index as key variable to predict future yield.
+In the work of Breda et. al. the LAI is described as the total one‐sided area of leaf tissue per unit ground surface area.\cite{beda:nathalie}
+To get the information on the total LAI the plant is divided into a model based of of Acock et. al. , who divided the canopy of a plant
+into multiple horizontal layers with equal depth ($\Delta d$). \cite{acock1978contribution}
+
+The dependency is assumed to be a non-linear, meaning there is a nonlinear function $F$ s.t. $$yield = F(LAI)$$. To find that non-linearity, data needs to be gathered first. For complex models more data is needed than for simple models. Thus for the first iteration the dependency is assumed to be linear. The yield will then be predicted by
 $$yield = m\cdot LAI + b$$
-Once much data is gathered and it turned out that a linear model doesn't make good predicitions, it is possible to use more complex models for later iterations.\\
+Once much data is gathered and it turned out that a linear model doesn't make good
+predictions, it is possible to use more complex models for later iterations.\\
+
 \textbf{Reasonable non-linear approaches:}
+
 \begin{itemize}
    \item Function of higher degree
    \item exponential function

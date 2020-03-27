@@ -35,48 +35,21 @@ The requirements to module choices motivate the use of model-based and data-driv
     \item \textbf{Scalability, Extensibility of modules to Novel Settings:} The strong modulation of the application allows the option to split, rearrange and reuse specific modules in novel settings.
 \end{enumerate}
 
-\subsection{Hypothesis generation}
+\subsection{Discussion on Strengths/Limitations of the Leaf Area Index model}
 
-\subsubsection{Hypotheses Generator - Model-based design}
-
-\subsubsection{Leaf area index estimation as a function of spatial information}
-
-One of the most important factors for yield over all sorts of crops is described by the photosynthetically active radiation,
-short the PAR. The dry matter production correlates to the amount of radiation a plant is able to absorb. \cite{heuvelink1996tomato}.
-In our previous design sectionw e motivated the use of the Leaf Area Index as key variable to predict future yield.
-In the work of Breda et. al. the LAI is described as the total one‐sided area of leaf tissue per unit ground surface area.\cite{beda:nathalie}
-To get the information on the total LAI the plant is divided into a model based of of Acock et. al. , who divided the canopy of a plant
-into multiple horizontal layers with equal depth ($\Delta d$). \cite{acock1978contribution} In our project the amount if layers is determined
-by using the variable $\Delta d$ and dividing it with the measured height of the considered plant.
-
-\begin{align*}
-    N_{levels} = \frac{h}{\Delta d}+1
-\end{align*}
-
-\noindent
-Due to the limited information in our application the size of the layers are estimated using a linear scaling of the radius of the canopy base layer.
-
-\begin{align*}
-    A_{total} = \sum_{i=1}^{N_{levels}} (\frac{i}{N_{levels} \cdot r})^2 \pi
-\end{align*}
-
-\subsubsection{Discussion on Strengths/Limitations of the Leaf Area Index model}
-
-As mentioned above the LAI index gives us a good representation of the PAR (photosynthetically active radiation) which highly influences biomass as well as yield production.
-\cite{hossain2017leaf} The yield predicted using the above mentioned modules is a useful:
-
-\begin{enumerate}
-         \item When the plant is in a full grown state before starting to produce yield, we are able to estimate future yield using the LAI at the moment of time the image is taken. Yield predicitons made by this application are used to estimate yield in the near future. In addition the approximation for full grown tomato plants is robust to inaccuracies. This is explained by the saturation of radiation that can be absorbed. Another factor is given by the fact that not all leaves are able to partake in the photosynthesis process.
-
-         \item The
-\end{enumerate}
+As mentioned above the LAI index gives us a good representation of the PAR (photosynthetically active radiation) which highly influences biomass as well as yield production
+\cite{hossain2017leaf} when the plant is in a full grown state before starting to produce yield, we are able to
+estimate future yield using the LAI at the moment of time the image is taken. Yield predictions made by this
+application are used to estimate yield in the near future. In addition the approximation for full grown tomato 
+plants is robust to inaccuracies. This is explained by the saturation of radiation that can be absorbed.
+Another factor is given by the fact that not all leaves are able to partake in the photosynthesis process.\\
 
 Under following conditions the method would fail:
 
 \begin{enumerate}
     \item When the plant doesn't grow in the intended position it is not possible to estimate the accurate height of the plant and the canopy size and plant height will be esimated with false values. The module will follow wrong assumptions to predict the leaf area and will not be able to give an accurate estimation of future yield.
 
-    \item If the plant shows some abnormalitites to the assumed norm. If the leaf density is abnormal low or high in any level of the plant the approximated yield will deviate from the intended value.
+    \item If the plant shows some abnormalities to the assumed norm. If the leaf density is abnormal low or high in any level of the plant the approximated yield will deviate from the intended value.
 
     \item Different morphology can not be recognized by the system and will be treated as the assumed cone shaped plant structure.
 \end{enumerate}
