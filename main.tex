@@ -4,13 +4,43 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{caption}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage{wrapfig}
 \usepackage{booktabs}
+\usepackage{multicol}
 \usepackage{longtable}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{xcolor}
+\definecolor{commentgreen}{RGB}{2,112,10}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{weborange}{RGB}{255,165,0}
+\definecolor{frenchplum}{RGB}{129,20,83}
 \usepackage{listings}
+\lstset{
+	basicstyle=\small,
+	columns=fullflexible,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	frame=tb,
+	%frame=single
+	tabsize=2,
+	showstringspaces=false,
+	%numbers=left,
+	%upquote=true,
+	commentstyle=\color{commentgreen},
+	keywordstyle=\color{eminence},
+	stringstyle=\color{red},
+	emph={int,char,double,float,unsigned,void,bool,var},
+	emphstyle={\color{blue}},
+	escapechar=\&,
+	% keyword highlighting
+	classoffset=1, % starting new class
+	otherkeywords={>,<,.,;,-,!,=,~},
+	morekeywords={>,<,.,;,-,!,=,~},
+	keywordstyle=\color{weborange},
+	classoffset=0
+}
 \usepackage{suffix}
 \newcommand\sectionauthor[1]{\authortoc{#1}}
 \usepackage{hyperref}
@@ -37,6 +67,7 @@
 
 \usepackage[left=2.5cm,right=2.5cm,top=3cm,bindingoffset=0mm]{geometry}
 \usepackage{csquotes}
+\linespread{1.3}
 
 \begin{document}
 	\pagenumbering{gobble}

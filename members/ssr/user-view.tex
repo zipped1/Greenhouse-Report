@@ -3,11 +3,12 @@
 \subsection{Greenhouse}\label{subsec:greenhouse}
 
 A greenhouse is a special building for the lone purpose of growing plans under optimal
-conditions. It‘s build of (semi)transparent walls and a roof - depending on the specific
+conditions.
+It‘s build of (semi)transparent walls and a roof - depending on the specific
 needs of the crops and the location.
 Environmental controls govern the atmosphere - ideally - for optimal growing conditions.
-The controls typically regulate lighting, irrigation and the nutrition provided through
-the soil.\\
+The controls typically regulate temperature, humidity, lighting, irrigation and the
+nutrition provided through the soil etc.\\
 
 \begin{figure}[H]
     \centering
@@ -15,45 +16,75 @@ the soil.\\
     \caption{Inside a greenhouse}
 \end{figure}
 
-Only crops with similar or same optimal growing conditions are grown within each greenhouse unit
-since different crops have difference optimal growing conditions in terms of temperature,
-humidity, lighting, nutrition etc.\\
+Only crops with similar or same optimal growing conditions are grown within each greenhouse
+since different crops have difference optimal growing conditions but typically only one crop
+variety is grown within each greenhouse.\\
 
-\subsubsection*{Layout}
+While the greenhouse system won't be introduced here further - since it's not the focus
+of this project - it's nonetheless worthwhile to get a high-level picture of the
+greenhouse as a controlled environment.
+Figure \ref{fig:scheme:greenhouse} provides a schematic overview which shows the external
+disturbance variables which impair the greenhouse regulation and the controlled variables.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{user-view/climate-control-scheme.png}
+    \caption{Greenhouse as a controlled environment with controlled variables and disturbance factors \cite{rod:greenhouse}}
+    \label{fig:scheme:greenhouse}
+\end{figure}
+
+\subsubsection*{Greenhouse layout and support structures}
 
 The greenhouse's layout is arranged in ways to optimally make use of the available space by densely
 arranging the crops.
 Since most greenhouses are used for commercial purposes and in this setting the yield per ground
-unit is pivotal, hence the goal is to maximize the yield of each plant.
+unit is pivotal the goal is to maximize the yield of each plant.\\
+
+In order to archive this goal, the crops are closely planted next to each other in rows
+or lanes with just enough room in between to be accessed by workers (figure \ref{fig:lane1}, \ref{fig:lane2}).
 
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{user-view/lanes.png}
         \caption{Crops arranged in lanes}
+        \label{fig:lane1}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{user-view/plant1_markus_spiske_unsplash.jpg}
         \caption{Walkable lanes}
+        \label{fig:lane2}
     \end{minipage}
 \end{figure}
 
-\subsubsection*{Lighting}
+Each single plant is supported by a stake which is an effective support structure to ensure
+the stability of the tomato plant.
+The material and type of the support structure can vary from cage-like structures
+to a more common single vertical stake made from any available straight material (figure \ref{fig:stake})
+which keeps the plant straight.
 
-One central aspect throughout this project is lighting and illumination.
-The primary source for bio-activity in plants is photosynthetic active radiation (PAR) -
-beside the already mentioned factors. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{user-view/tomato_stake.jpg}
+    \caption{Plants supported by stakes}
+    \label{fig:stake}
+\end{figure}
 
 \subsection{Plants}\label{subsec:plants}
 
-This section will give a brief overview the plants properties which this project is concerned with.
+This section will give a brief overview of certain aspects of tomato plants physiology
+which are important for this project.
+Certain physical aspects are introduced and described in more detail in later sections when needed, this
+section provides only a brief overview.
 
-\subsubsection*{Growth Stages}
+\subsubsection*{Growth Stages}\label{sec:growth-stages}
 
-Figure \ref{growth-stages} shows the different stages of tomato plant throughout its lifetime.
+Tomato plants undergo roughly five growth stages throughout their lifetime which are apparent through
+physical changes.
+Figure \ref{growth-stages} shows the different stages of a tomato plant throughout its lifetime.
 The relevant features for our purpose here are the plant's geometric development in each growth stage
-and the fruit's color change during that time.
+and the appearance of certain colors in each phase.
 
 \begin{figure}[H]
     \centering
@@ -62,32 +93,45 @@ and the fruit's color change during that time.
     \label{growth-stages}
 \end{figure}
 
-Beside other factors each state is basically signified by an increase in branching  and growth, whereby
-pre-existing branches grow longer an never mainly appear above existing branches creating multiple levels
-of branches with shrinking branch length. 
-\newpage
-\subsubsection*{Leaf Properties}
+In later growth stages, additional branch structures appear above pre-exiting branches creating a level-like
+plants appearance whereby older branches are longer and newly grown branches are naturally shorter.\\
 
-The main driver for bio-activity in plants is initiated through the leaves surface interaction.
-Either through gas exchange of through photosynthetic active radiation through light.
+Tomato fruits are healthy and ripe once their surface is covered entirely in an rather dark red.
+There also exist other varieties of tomatoes which yield to yellow or green ripe fruits but those
+or not used here.
+
+\subsubsection*{Leaves}
+
+The main driver for bio-activity in plants is initiated through photosynthetic active radiation (PAR)
+through the impact of light on the leaf surface and interaction with gas.
+Depending on the growth stage and lighting conditions the leaf surface can appear differently.
+
+In earlier growth stages the leaves are light green and slightly translucent (figure \ref{fig:trans}).
+In later growing stages the leaf textures is typically a darker green, hairy and covered
+with a wax making the leaves appear mostly mat and dark green (figure \ref{fig:wax}).
 
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{user-view/plant4_leaf_Soo_Ann_Woon_Unsplash.jpg}
         \caption{Hairy, waxy leaf surface}
+        \label{fig:wax}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{user-view/plant2_Francesco_Gallarotti_unsplash.jpg}
         \caption{Young leaves partly translucent}
+        \label{fig:trans}
     \end{minipage}
 \end{figure}
-\newpage
+
 \subsubsection*{Defective Plants}
 
-Defects are either apparent through visibly damaged leaves, fruits or both.
-Since these plants have defects their either have impaired or none fruit production.
+Defects in plants are either apparent through visibly damaged leaves, fruits or both.
+Healthy leaves which contribute to the plant's bio-activity - and hence its yield - are throughout green
+and do not contain other colors or physical damages.
+Damaged fruits are also apparent through drastic color differences along the surface ,
+like red-like and black or red and orange.
 
 Figure \ref{fig:septoria} and \ref{fig:blight} show the two most common diseases which are visible through leave changes and
 figure \ref{fig:Anthracnose} and \ref{fig:blossom} and show the two most common fruit diseases - both are caused by fungi
@@ -126,19 +170,19 @@ as expected from green healthy leaves.
     \end{minipage}
 \end{figure}
 
-This also applies to fruits which have deviating colors as it is expected in the
-growing state (yewllow-like color) or have colorings which is not expected in any stage (black rot).
+Damaged fruits are visible through big differently color clusters along the surface.
 
+\clearpage
 \subsection{Task Requirements}\label{subsec:task-requirements}
 
 This project is concerned with the commercial domain of yield production and its purpose
-is to estimate the expected yield.
-Hence the goal is to design a solution which can automatically estimate yield based on photo camera images
-taken from the greenhouse tomato plants.\\
+is to predict yield, hence the goal is to design a solution which can automatically estimate yield:\\
 
-For this purpose obvious requirements are:
+For this purpose the requirements are:
+
 \begin{enumerate}
-    \item a reasonable and affordable solution which makes sense from cost and labor perspective
+    \item Estimate yield based on camera images taken from tomato plants within a greenhouse
     \item the greenhouse space should be used as effective as possible, means that the number of plants per group unit should be dense
+    and ideally no rearrangement is necessary and mainly minimal additional equipment is needed
 \end{enumerate}
 \newpage

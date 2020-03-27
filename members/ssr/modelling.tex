@@ -1,27 +1,36 @@
-\graphicspath{{members/ssr/figures/}}
+\graphicspath{{members/ssr/figures/modelling}}
 
 \subsection{Assumptions and High-Level Design}
 \input{members/ssr/authors}
 
-The designed system for the purpose of yield estimation is founded on one central assumption which is provided 
-by the user-view:
+The designed system for the purpose of yield prediction is founded on one central assumption: 
+the main metric for vital growth is the leaf area index (LAI) which determines the PAR:
 
-\begin{center}
-    \textit{The canopy size or green leaf area is positively correlated with yield.}    
-\end{center}
+\begin{quote}
+    \centering
+    Leaf area index (LAI) is the total one‐sided area of leaf tissue per unit ground surface area.
+    It is a key parameter in ecophysiology, especially for scaling up the gas exchange from leaf
+    to canopy level.
+    It characterizes the canopy–atmosphere interface, where most of the energy fluxes exchange. \cite{breda}
+\end{quote}
 
-This also means that damaged leaves don't contribute to the yield due to damaged bio-active tissue.\\
+To measure this central metric, two computation pipelines are combined to extract specific metrics from images.
+Each pipeline applies a series of image processing and computations in order to contribute to the result
+in the following ways:
 
-For this purpose the central metric for yield estimation is the \textit{leaf area index} (LAI).
-This is achieved by combining two computation pipelines - each estimating specific metrics - for the final estimation.
-
-\begin{itemize}
-    \item \textbf{Pipeline A:} Estimates the \textit{leaf area} (not LAI) which is visible from above of the plant
-    taken from a camera.
-    \item \textbf{Pipeline B:} Estimates the plant height based on an image taken from a different camera
+\begin{enumerate}
+    \item \textbf{Pipeline A:} Estimates the \textit{leaf area} (not LAI) which is the visible canopy
+    of a single plant, captured by camera mounted above of the plants.
+    \item \textbf{Pipeline B:} Estimates the plant height, based on an image taken from a different camera,
     with a specific setup.
-\end{itemize}
+\end{enumerate}
 
-Both metrics are then combined with additional statistical corrections to estimate the actual LAI.
+Both metrics are then combined (with additional statistical corrections) to estimate the actual LAI.
 Again, the LAI is different from the \textit{leaf area} in the way that it contains
 the \textit{entire} existing leaf area and not only the leaf area which is visible from above.
+
+\input{members/ssr/modelling/plant-model.tex}
+
+\subsection{Pipeline A}\label{subsec:pipeline-a}
+\input{members/ssr/modelling/setup.tex}
+\input{members/ssr/modelling/clustering.tex}

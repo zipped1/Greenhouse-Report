@@ -1,12 +1,20 @@
-\section{Implementation and Evaluation}\label{sec:implementation-and-evaluation}
+\clearpage
+\section{Implementation}\label{sec:implementation-and-evaluation}
+\input{members/ssr/authors}
 
-Within the given time constraints of the project the entire design couldn't be implemented and evaluated - still an implementation
-has been made to test the robustness of extracting the two main metrics for the yield estimation computation.
-As described these are the \textit{top-view leaf area} and the tip of the plant.
-\\
-\\
-An additional goal of the implementation was to gather color distributions from leaf areas for realistic material simulation.
-\\
-\\
-Following is a description of the computational pipeline with the parameters and the finding on the usefulness of the design choices
-on how to measure the needed metrics.
+Within the given time constraints of the project the entire design couldn't be implemented, evaluated and refined.
+Nonetheless, an implementation has been conducted to test the pipelines and evaluate the practicality of the modelling ideas
+and to gather data, such as:
+
+\begin{enumerate}
+    \item Segmenting leaf area from non-leaf area to estimate the leaf area visible from above - for the LAI computation
+    \item Gathering color distributions of leaf areas, based on the segmentation.
+    \item Locating the tip of the plant - for the height estimation
+\end{enumerate}
+
+A general description of the pipeline and high-level ideas have been describe in the model section, this
+section however exactly explains how the mentioned aspects have been extracted which are the main metrics for
+further computations.\\
+
+Firstly, the general architecture and platform are briefly described and then each step of the computational
+pipeline with example outputs are shown.

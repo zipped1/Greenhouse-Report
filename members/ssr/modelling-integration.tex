@@ -2,20 +2,35 @@
 
 \subsection{Integration with Simulation}\label{subsec:integration-with-simulation}
 
-The way in which this project was conducted led to some limitations in the way the simulation was executed
-which have to be explained in order to understand how it affected the modelling and the entire project.\\
+The way in which the entire project was conducted led to some limitations in the way the simulation was executed
+which has to be explained in order to understand how it affected the modelling and simulation.\\
 
-Normally, the modelling must be done (or progressed quite far) before the requirements for the simulation are known.
+Normally, the modelling should be completed (or nearly finished) so that the requirements for the simulation are known.
 The reason is that the model must first be formally defined with all of its parameters and then the evaluation can start
-on how to simulate the model - either by using existing tools or by creating them.\\
+on how to simulate the model's parameters accurately - either by using existing tools or by creating them. 
+This on its own turned out to be an elaborate enterprise which could not be conducted thoroughly, so a
+compromise has been found.
 
-In order to fulfill the time constraints of this project however the modelling and simulation team worked in parallel and
-this affected choices made by the modelling group in order to archive a compromise between \textit{preferred} and \textit{practical} design choices.
+In order to fulfill the time constraints of this project the modelling and simulation team worked in parallel
+to evaluate usable simulation tools and this affected the choices made by the modelling group in order
+to archive a compromise between a \textit{preferred} and \textit{practical} solution.
 
-The reasons are that the relevant metrics and data gathering setup wasn't yet known until later in the modelling
-since many approaches had to explored until one promissing design was found.
-The limitations mainly concern the simulation of an accurate plant's appearance and the physical material properties
-of the plant's surface.\\
+The reasons are that the relevant metrics and data gathering setup were not known until later in the modelling
+since many approaches had to explored until one promising design was found.
+
+Since the model only relies on leaf area and height measurements, the parameters of chief interest for simulation
+were proper simulation of the plant's leaves and the height.
+
+Other factors, like accurate fruit simulation and further probability distributions could not be simulated
+since no data has been found or no formal method for gathering conducted, like for leaf tilt distributions.
+How to gather such distributions is also another enterprise on its own and won't be investigated here
+further.
+
+It was also unclear until later in the modelling that the fruit properties (like texture and color)
+were not of chief interest - for the purpose of yield estimation.
+Hence, the fruits have only been rudimentarily simulated for testing purposes
+- however the fruit properties have not yet been integrated into the model but only used in
+data preparation, like segmentation and for this purpose they served well.\\
 
 Following metrics has been selected for the simulation and can be provided with data (or need yet real-world probability distributions):\\
 
